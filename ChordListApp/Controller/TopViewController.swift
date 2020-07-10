@@ -134,20 +134,23 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     
-    func comfilmSelectChordAlert(Selectkey: Int){
-        if pickerView.tag == 1{
-            comfilmSelectChord = UIAlertController(title:"キーは\(keyDataSourceSharp[Selectkey])", message: "キーはこれでいいですか？", preferredStyle: .alert)
-            let cancell:UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler:{
-                (action: UIAlertAction!) in
-                print("タップされたよ")
-                
-            })
-            comfilmSelectChord.addAction(cancell)
-            present(comfilmSelectChord, animated: true, completion: nil)
-        }else{
+    //決定ボタンをタップした時の処理
+    @IBAction func ChordListVCActionButton(_ sender: Any) {
+        //スケール、Key選択どちらかが空白だったらダイアログを表示したい
+        if scaleTextField.text == "" || keyTextField.text == ""{
+            attentionDialog()
+        }else{ //両方とも値が入っていたら次の画面へ遷移する
             
+            let chordListVC = self.storyboard?.instantiateViewController(identifier: "ChordListVC") as! ChordListViewController
+            
+            chordListVC.signatureState = signatureState
+            chordListVC.startNote = keyNumber
+            chordListVC.selectScale = scaleNumber
+            self.navigationController?.pushViewController(chordListVC,animated: true)
         }
     }
+    
+    //調号切り替えのUISwitch　ON/OFF切り替えた時の処理
     @IBAction func signatureSwitch(_ sender: UISwitch) {
         if sender.isOn {
             //onの時の処理
@@ -155,5 +158,17 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }else{
             signatureState = 0
         }
+    }
+    
+    func attentionDialog(){
+        let alert:UIAlertController = UIAlertController(title: "値を入力してください", message: "スケールと選択を選択してください", preferredStyle: .alert)
+        
+        let alertOkButton:UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{ (action:UIAlertAction!) -> Void in
+            print("OKボタンをタップしました")
+        })
+        
+        alert.addAction(alertOkButton)
+        
+        present(alert, animated: true,completion: nil)
     }
 }

@@ -15,6 +15,7 @@
 		C4BF578A24B5C5600043A038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BF578824B5C5600043A038 /* LaunchScreen.storyboard */; };
 		C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */; };
 		C4D8966024B826D700F5D0AA /* ScaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */; };
+		C4D8966224B8484600F5D0AA /* ChordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8966124B8484600F5D0AA /* ChordListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C4BF578B24B5C5600043A038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTableViewCell.swift; sourceTree = "<group>"; };
 		C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleTableViewCell.xib; sourceTree = "<group>"; };
+		C4D8966124B8484600F5D0AA /* ChordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				C4BF578124B5C55F0043A038 /* TopViewController.swift */,
+				C4D8966124B8484600F5D0AA /* ChordListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				C4BF578224B5C55F0043A038 /* TopViewController.swift in Sources */,
 				C4BF577E24B5C55F0043A038 /* AppDelegate.swift in Sources */,
 				C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */,
+				C4D8966224B8484600F5D0AA /* ChordListViewController.swift in Sources */,
 				C4BF578024B5C55F0043A038 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
