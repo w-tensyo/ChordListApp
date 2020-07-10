@@ -13,6 +13,8 @@
 		C4BF578524B5C55F0043A038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BF578324B5C55F0043A038 /* Main.storyboard */; };
 		C4BF578724B5C5600043A038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4BF578624B5C5600043A038 /* Assets.xcassets */; };
 		C4BF578A24B5C5600043A038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BF578824B5C5600043A038 /* LaunchScreen.storyboard */; };
+		C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */; };
+		C4D8966024B826D700F5D0AA /* ScaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C4BF578624B5C5600043A038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4BF578924B5C5600043A038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4BF578B24B5C5600043A038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTableViewCell.swift; sourceTree = "<group>"; };
+		C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			children = (
 				C4BF578824B5C5600043A038 /* LaunchScreen.storyboard */,
 				C4BF578324B5C55F0043A038 /* Main.storyboard */,
+				C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */,
+				C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 			files = (
 				C4BF578A24B5C5600043A038 /* LaunchScreen.storyboard in Resources */,
 				C4BF578724B5C5600043A038 /* Assets.xcassets in Resources */,
+				C4D8966024B826D700F5D0AA /* ScaleTableViewCell.xib in Resources */,
 				C4BF578524B5C55F0043A038 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +171,7 @@
 			files = (
 				C4BF578224B5C55F0043A038 /* TopViewController.swift in Sources */,
 				C4BF577E24B5C55F0043A038 /* AppDelegate.swift in Sources */,
+				C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */,
 				C4BF578024B5C55F0043A038 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

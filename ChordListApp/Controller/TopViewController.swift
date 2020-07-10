@@ -14,6 +14,12 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     //0 = ♭、1 = #
     var signatureState: Int = 1
     
+    /*選択した値を次画面へ渡すための変数
+     scaleNumber = scaleDataSource[row]
+     keyNumber =  keyDataSourceSharp[row] or keyDataSourceFlat[row]
+     */
+    var scaleNumber:Int = -1
+    var keyNumber:Int = -1
 
 
     @IBOutlet weak var signatureSwitchView: UISwitch!
@@ -35,10 +41,18 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         super.viewDidLoad()
 
 
+        //画面幅の取得
+        let screenWidth:CGFloat = UIScreen.main.bounds.width
+        print(screenWidth)
+        //画面高さの取得
+        let screenHeight:CGFloat = self.view.bounds.height
+
+        //pickerの表示位置をCGRect型で指定
+        let pickerFrame:CGRect = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight / 3)
 
         // pickerViewの配置するx,yと幅と高さを設定.
-        choiceKeyPicker.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: choiceKeyPicker.bounds.size.height)
-        choiceScalePicker.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: choiceScalePicker.bounds.size.height)
+        choiceKeyPicker.frame = pickerFrame
+        choiceScalePicker.frame = pickerFrame
         
         // Delegateを自身に設定する
         choiceKeyPicker.delegate = self
@@ -99,11 +113,17 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         if pickerView.tag == 1{
             if signatureState == 1{
                 keyTextField.text = keyDataSourceSharp[row]
+                keyNumber = row
+                print(Int(keyNumber))
             }else{
                 keyTextField.text = keyDataSourceflat[row]
+                keyNumber = row
+                print(Int(keyNumber))
             }
         }else if pickerView.tag == 2{
             scaleTextField.text = scaleDataSource[row]
+            scaleNumber = row
+            print(Int(scaleNumber))
         }
         scaleTextField.endEditing(true)
         keyTextField.endEditing(true)
