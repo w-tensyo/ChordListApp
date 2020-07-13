@@ -9,12 +9,16 @@
 import Foundation
 
 class TriadCode{
-    var rootToneNumber:Int
-    var triadScaleNumber:Int
+    var rootToneNumber:String = ""
+    var thirdToneNumber:String = ""
+    var fifthToneNumber:String = ""
+    var rootNote:String = ""
+    var triadCode:String = ""
     
-    init(rootToneNumber: Int, triadScaleNumber:Int){
-        self.rootToneNumber = rootToneNumber
-        self.triadScaleNumber = triadScaleNumber
-    }
+//    init(rootToneNumber: Int, thirdToneNumber:Int, fifthToneNumber:Int){
+//        self.rootToneNumber = rootToneNumber
+//        self.thirdToneNumber = thirdToneNumber
+//        self.fifthToneNumber = fifthToneNumber
+//    }
     
 }

@@ -29,5 +29,24 @@ class TriadTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func setTriadCode(triadCode:TriadCode){
+        
+        /*
+         var rootToneNumber:Int = 0
+         var thirdToneNumber:Int = 0
+         var fifthToneNumber:Int = 0
+         var rootNote:String = ""
+         var triadCode:String = ""
+         */
+        
+    
+        
+        self.rootToneLabel.text = triadCode.rootNote
+        self.triadToneLabel.text = triadCode.triadCode
+        self.firstToneLabel.text = String(triadCode.rootToneNumber)
+        self.thirdToneLabel.text = String(triadCode.thirdToneNumber)
+        self.fifthToneLabel.text = String(triadCode.fifthToneNumber)
+        
+    }
     
 }

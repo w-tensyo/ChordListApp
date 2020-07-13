@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TriadTableViewCell" customModule="ChordListApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TriadCell" id="KGk-i7-Jjw" customClass="TriadTableViewCell" customModule="ChordListApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -145,7 +145,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cCO-hp-0lB" secondAttribute="bottom" constant="8" id="3xG-aL-IW4"/>
-                    <constraint firstItem="jrW-qx-FJC" firstAttribute="width" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="EoX-0Y-RJp"/>
+                    <constraint firstItem="jrW-qx-FJC" firstAttribute="width" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="width" id="EoX-0Y-RJp"/>
                     <constraint firstAttribute="bottom" secondItem="jrW-qx-FJC" secondAttribute="bottom" constant="8" id="Euz-lu-ldT"/>
                     <constraint firstItem="cCO-hp-0lB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JBm-Oa-uw3"/>
                     <constraint firstItem="cCO-hp-0lB" firstAttribute="leading" secondItem="jrW-qx-FJC" secondAttribute="trailing" id="KWS-IY-bZ8"/>

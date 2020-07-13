@@ -23,10 +23,13 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     //# ♭それぞれのトーンを配列で用意
     let sharpToneList:Array<String> = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E"]
     let flatToneList:Array<String> = ["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B","C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B","C","D♭","D","E♭","E"]
-    
     /*sharpToneList　か flatToneListのどちらかを格納するための配列
     どちらを格納するかはsignatureStateの値で判定（viewDidLoad内で処理）*/
     var selectedSignature:Array<String> = []
+    
+    //TriadTableViewCell.swiftに値を渡すため、Model内に用意した、TriadCode.swiftを用意する
+    var triadCodeArray:Array<TriadCode> = []
+    
     
     /*true,true = majer
       false,false = スケール外（リストに表示しない
@@ -79,6 +82,8 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
             break
         }
 
+        //customCellを認識させるための処理。nibNameには登録させたいファイル名。forCellReuseIdentifierには CustomCellに設定したIdentifierを記述
+        chordListTableView.register(UINib(nibName: "TriadTableViewCell",bundle: nil), forCellReuseIdentifier: "TriadCell")
 
         
         //ListViewに表示するための配列を生成するメソッド
@@ -99,7 +104,14 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for: indexPath)
+
+        //triadCodeArrayでも使えるように、セル番号が格納されているIndexPath.rowをindexPathNumberに格納
+        let indexPathNumber = Int(indexPath.row)
+        
+        //定数cellに対して、as! TruadTableViewCellで参照するswiftファイルをキャストする。
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TriadCell",for: indexPath) as! TriadTableViewCell
+        
+        
         if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{
             majarOrMiner = " maj  "
         }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{
@@ -109,22 +121,34 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         }else{
             majarOrMiner = "  --  "
         }
+        
+        
+        
+        
+        //triadCodeArrayを配列で宣言していたので、その末尾にTriadCode型の配列を追加
+        triadCodeArray.append(TriadCode())
+        
+        //TriadTableViewCellで実装しているsetTriadCodeに以下のパラメータを入れていく
+        
+        triadCodeArray[indexPathNumber].rootNote = self.adjustToneList[consitutionArray[indexPath.row][0]]
+        triadCodeArray[indexPathNumber].triadCode = majarOrMiner
+        triadCodeArray[indexPathNumber].rootToneNumber = self.adjustToneList[consitutionArray[indexPath.row][0]]
+        triadCodeArray[indexPathNumber].thirdToneNumber = self.adjustToneList[consitutionArray[indexPath.row][1]]
+        triadCodeArray[indexPathNumber].fifthToneNumber = self.adjustToneList[consitutionArray[indexPath.row][2]]
 
-        let root = self.adjustToneList[consitutionArray[indexPath.row][0]]
-        let third = self.adjustToneList[consitutionArray[indexPath.row][1]]
-        let fifth = self.adjustToneList[consitutionArray[indexPath.row][2]]
-        // cellにテキストを表示
-        cell.textLabel?.text = "\(self.adjustToneList[indexPath.row])\(String(majarOrMiner))        Root: \(root)   3rd: \(third)  5th: \(fifth)"
+        
+        cell.setTriadCode(triadCode: triadCodeArray[indexPathNumber])
+
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{ //majerの場合
-            return 40
+            return 48
         }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{ //minerの場合{
-            return 40
+            return 48
         }else if displayScareArray[indexPath.row][0] == false && displayScareArray[indexPath.row][1] == true{ //miner♭5の場合
-            return 40
+            return 48
         }else{ //ダイアトニックスケール外の場合
             return 0
         }
