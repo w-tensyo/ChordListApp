@@ -41,6 +41,8 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         super.viewDidLoad()
 
 
+        //ダークモードの無効化
+        self.overrideUserInterfaceStyle = .light
         //画面幅の取得
         let screenWidth:CGFloat = UIScreen.main.bounds.width
         print(screenWidth)

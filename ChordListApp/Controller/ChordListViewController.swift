@@ -56,6 +56,9 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //ダークモードの無効化
+        self.overrideUserInterfaceStyle = .light
+        
         //前画面で選択した調号の状態によって使う配列を切り替える
         if signatureState == 1{
             //signatureState = 1 (#だった時)はsharpToneListの配列を格納する
