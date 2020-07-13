@@ -9,7 +9,10 @@
 import UIKit
 
 class TriadTableViewCell: UITableViewCell {
+    
 
+    @IBOutlet weak var numberLabel: UILabel!
+    
     @IBOutlet weak var rootToneLabel: UILabel!
     @IBOutlet weak var triadToneLabel: UILabel!
     
@@ -47,6 +50,76 @@ class TriadTableViewCell: UITableViewCell {
         self.thirdToneLabel.text = String(triadCode.thirdToneNumber)
         self.fifthToneLabel.text = String(triadCode.fifthToneNumber)
         
+    
+        var toneSign:String = ""
+        switch triadCode.toneNumber {
+        case 0:
+            toneSign = "Ⅰ"
+            break
+        case 2:
+            toneSign = "Ⅱ"
+            break
+        case 3:
+            toneSign = "Ⅲ"
+            break
+        case 4:
+            toneSign = "Ⅲ"
+            break
+        case 5:
+            toneSign = "Ⅳ"
+            break
+        case 7:
+            toneSign = "Ⅴ"
+            break
+        case 8:
+            toneSign = "Ⅵ"
+            break
+        case 9:
+            toneSign = "Ⅵ"
+            break
+        case 10:
+            toneSign = "Ⅶ"
+            break
+        case 11:
+            toneSign = "Ⅶ"
+            break
+        default:
+            toneSign = "-"
+        }
+        
+        self.numberLabel.text = toneSign
+        
     }
+    
+    //各コードのMajer Minerを判定するためのメソッド
+    func judgeCode(firstElement:Bool,secondElement:Bool) ->String{
+        
+        var majarOrMiner:String = ""
+        
+        if firstElement == true && secondElement == true{
+            majarOrMiner = " maj  "
+        }else if firstElement == true && secondElement == false{
+            majarOrMiner = "  m   "
+        }else if firstElement == false && secondElement == true{
+            majarOrMiner = " m(♭5)"
+        }else{
+            majarOrMiner = "  --  "
+        }
+        return majarOrMiner
+        
+    }
+    
+    //CustomCellの高さを定義するためのメソッド
+//    func judgeCellheight(firstElement:Bool,secondElement:Bool)-> CGFloat{
+//        if firstElement == true && secondElement == true{ //majerの場合
+//            return 100
+//        }else if firstElement == true && secondElement == false{ //minerの場合{
+//            return 100
+//        }else if firstElement == false && secondElement == true{ //miner♭5の場合
+//            return 100
+//        }else{ //ダイアトニックスケール外の場合
+//            return 0
+//        }
+//    }
     
 }

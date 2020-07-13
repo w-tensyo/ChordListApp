@@ -18,7 +18,10 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     //
     var indexNum:Int = 0
+    
     //
+    var cellHeight:CGFloat = 0
+    
     var majarOrMiner:String = ""
     //# ♭それぞれのトーンを配列で用意
     let sharpToneList:Array<String> = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E"]
@@ -51,6 +54,9 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     //↑で定義した定数の二次元配列を格納するための配列
     var consitutionArray:[[Int]] = []
+    
+    
+    
     
     @IBOutlet weak var chordListTableView: UITableView!
     override func viewDidLoad() {
@@ -114,16 +120,14 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         //定数cellに対して、as! TruadTableViewCellで参照するswiftファイルをキャストする。
         let cell = tableView.dequeueReusableCell(withIdentifier: "TriadCell",for: indexPath) as! TriadTableViewCell
         
+        // TriadTableViewCell.swift　に渡すように各配列を定数へ格納
+        let firstElement = displayScareArray[indexPath.row][0]
+        let secondElement = displayScareArray[indexPath.row][1]
+        majarOrMiner = cell.judgeCode(firstElement: firstElement, secondElement: secondElement)
         
-        if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{
-            majarOrMiner = " maj  "
-        }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{
-            majarOrMiner = "  m   "
-        }else if displayScareArray[indexPath.row][0] == false && displayScareArray[indexPath.row][1] == true{
-            majarOrMiner = " m(♭5)"
-        }else{
-            majarOrMiner = "  --  "
-        }
+        //CustomCellの高さを判定するメソッド
+        decideCellFormat(firstElement:firstElement,secondElement:secondElement)
+        
         
         
         
@@ -139,6 +143,7 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         triadCodeArray[indexPathNumber].thirdToneNumber = self.adjustToneList[consitutionArray[indexPath.row][1]]
         triadCodeArray[indexPathNumber].fifthToneNumber = self.adjustToneList[consitutionArray[indexPath.row][2]]
 
+        triadCodeArray[indexPathNumber].toneNumber = indexPathNumber
         
         cell.setTriadCode(triadCode: triadCodeArray[indexPathNumber])
 
@@ -146,15 +151,19 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{ //majerの場合
-            return 48
-        }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{ //minerの場合{
-            return 48
-        }else if displayScareArray[indexPath.row][0] == false && displayScareArray[indexPath.row][1] == true{ //miner♭5の場合
-            return 48
-        }else{ //ダイアトニックスケール外の場合
-            return 0
-        }
+        
+        
+//        if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{ //majerの場合
+//            return 48
+//        }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{ //minerの場合{
+//            return 48
+//        }else if displayScareArray[indexPath.row][0] == false && displayScareArray[indexPath.row][1] == true{ //miner♭5の場合
+//            return 48
+//        }else{ //ダイアトニックスケール外の場合
+//            return 0
+//        }
+        print(cellHeight)
+        return cellHeight
     }
     
     //スケールのルート音から12個の音をadjustToneListに格納する
@@ -183,4 +192,21 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         //falseかtrueを返す
         return result
     }
+    
+    
+    func decideCellFormat(firstElement:Bool,secondElement:Bool){
+        
+        if firstElement == true && secondElement == true{ //majerの場合
+            cellHeight = 70
+        }else if firstElement == true && secondElement == false{ //minerの場合{
+            cellHeight = 70
+        }else if firstElement == false && secondElement == true{ //miner♭5の場合
+            cellHeight = 70
+        }else{ //ダイアトニックスケール外の場合
+            cellHeight = 0
+        }
+        
+        
+    }
+    
 }

@@ -14,6 +14,7 @@ class TriadCode{
     var fifthToneNumber:String = ""
     var rootNote:String = ""
     var triadCode:String = ""
+    var toneNumber:Int = 0
     
 //    init(rootToneNumber: Int, thirdToneNumber:Int, fifthToneNumber:Int){
 //        self.rootToneNumber = rootToneNumber
