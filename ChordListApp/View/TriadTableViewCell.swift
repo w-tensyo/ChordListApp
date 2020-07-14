@@ -109,17 +109,13 @@ class TriadTableViewCell: UITableViewCell {
         
     }
     
-    //CustomCellの高さを定義するためのメソッド
-//    func judgeCellheight(firstElement:Bool,secondElement:Bool)-> CGFloat{
-//        if firstElement == true && secondElement == true{ //majerの場合
-//            return 100
-//        }else if firstElement == true && secondElement == false{ //minerの場合{
-//            return 100
-//        }else if firstElement == false && secondElement == true{ //miner♭5の場合
-//            return 100
-//        }else{ //ダイアトニックスケール外の場合
-//            return 0
-//        }
-//    }
+    //    CustomCellの高さを定義するためのメソッド
+    func judgeCellheight(firstElement:Bool,secondElement:Bool)-> CGFloat{
+        if firstElement == false && secondElement == false{
+            return 0
+        }else{ //false,false以外は全てリストとして表示をしたいので、これで分岐。
+            return 70
+        }
+    }
     
 }

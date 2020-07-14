@@ -273,12 +273,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46G-HM-sCn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-Ta-xcX">
+                                <rect key="frame" x="0.0" y="60" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="j8u-Ft-wWg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="0.090795315799999998" green="0.3214518428" blue="0.67769181730000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-Hg-mjD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="780"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="so0-IT-mm2">
@@ -294,15 +299,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lzf-Hg-mjD" firstAttribute="top" secondItem="I4R-G8-eEM" secondAttribute="top" id="BjJ-zI-cv8"/>
-                            <constraint firstItem="Lzf-Hg-mjD" firstAttribute="leading" secondItem="I4R-G8-eEM" secondAttribute="leading" id="XD1-s9-vOX"/>
+                            <constraint firstItem="fqx-Ta-xcX" firstAttribute="top" secondItem="I4R-G8-eEM" secondAttribute="top" constant="16" id="LtC-Rc-af8"/>
+                            <constraint firstItem="fqx-Ta-xcX" firstAttribute="leading" secondItem="I4R-G8-eEM" secondAttribute="leading" id="P3X-Sg-9RG"/>
                             <constraint firstItem="Lzf-Hg-mjD" firstAttribute="trailing" secondItem="I4R-G8-eEM" secondAttribute="trailing" id="a7V-gp-mWr"/>
-                            <constraint firstAttribute="bottom" secondItem="Lzf-Hg-mjD" secondAttribute="bottom" id="k8i-1F-C8G"/>
+                            <constraint firstItem="I4R-G8-eEM" firstAttribute="trailing" secondItem="fqx-Ta-xcX" secondAttribute="trailing" id="ayg-6B-POp"/>
+                            <constraint firstItem="Lzf-Hg-mjD" firstAttribute="leading" secondItem="I4R-G8-eEM" secondAttribute="leading" id="eae-Hv-7Wc"/>
+                            <constraint firstItem="fqx-Ta-xcX" firstAttribute="trailing" secondItem="I4R-G8-eEM" secondAttribute="trailing" id="lf8-e6-lSq"/>
+                            <constraint firstAttribute="bottom" secondItem="Lzf-Hg-mjD" secondAttribute="bottom" id="nDs-xL-iyN"/>
+                            <constraint firstItem="Lzf-Hg-mjD" firstAttribute="top" secondItem="fqx-Ta-xcX" secondAttribute="bottom" constant="16" id="uj7-Fi-SXI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I4R-G8-eEM"/>
                     </view>
                     <connections>
                         <outlet property="chordListTableView" destination="Lzf-Hg-mjD" id="fbS-2A-vHl"/>
+                        <outlet property="resultCodeLabel" destination="fqx-Ta-xcX" id="v5o-WD-uNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itg-Wc-vWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -20,7 +20,7 @@
                         <rect key="frame" x="16" y="8" width="288" height="24"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wpl-TC-fin" userLabel="SignLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="96" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="86" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-KZ-gkT">
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="20"/>
@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4FB-Dx-AVI" userLabel="BetweenSV Number to Label">
-                                        <rect key="frame" x="32" y="0.0" width="64" height="20"/>
+                                        <rect key="frame" x="32" y="0.0" width="54" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="sIx-xD-rIJ"/>
                                         </constraints>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYJ-I7-JlA" userLabel="ToneLabel">
-                                <rect key="frame" x="96" y="0.0" width="192" height="20"/>
+                                <rect key="frame" x="86" y="0.0" width="202" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMO-mD-jCt" userLabel="rootLabelLeftMargin">
                                         <rect key="frame" x="0.0" y="0.0" width="8" height="20"/>
@@ -109,7 +109,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-SG-6zF" userLabel="5thLabelRightMargin">
-                                        <rect key="frame" x="114" y="0.0" width="78" height="20"/>
+                                        <rect key="frame" x="114" y="0.0" width="88" height="20"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -149,32 +149,32 @@
                         <rect key="frame" x="16" y="32" width="288" height="32"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrW-qx-FJC" userLabel="TitleView">
-                                <rect key="frame" x="0.0" y="0.0" width="96" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="86" height="32"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-A6-5cT">
-                                        <rect key="frame" x="0.0" y="0.0" width="8" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="8" id="fnM-pA-6a2"/>
+                                            <constraint firstAttribute="width" id="fnM-pA-6a2"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn0-tD-vYf">
-                                        <rect key="frame" x="8" y="0.0" width="30" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VCB-Ke-AZ8"/>
-                                            <constraint firstAttribute="width" constant="30" id="tM5-xz-FHe"/>
+                                            <constraint firstAttribute="width" constant="28" id="tM5-xz-FHe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.89635059931506844" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-dP-76F">
-                                        <rect key="frame" x="88" y="0.0" width="8" height="32"/>
+                                        <rect key="frame" x="78" y="0.0" width="8" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="8" id="9cO-61-OVR"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7sus4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10c-Pk-RB5">
-                                        <rect key="frame" x="38" y="0.0" width="50" height="32"/>
+                                        <rect key="frame" x="28" y="0.0" width="50" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="406-LF-xsg"/>
                                             <constraint firstAttribute="width" constant="50" id="6mW-SU-jGo"/>
@@ -201,7 +201,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-hp-0lB" userLabel="ToneDisplayStackView">
-                                <rect key="frame" x="96" y="0.0" width="192" height="32"/>
+                                <rect key="frame" x="86" y="0.0" width="202" height="32"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0L-ZL-noj" userLabel="1stToneMarginLeft">
                                         <rect key="frame" x="0.0" y="0.0" width="8" height="32"/>
@@ -254,7 +254,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmT-pb-8gn" userLabel="5thToneMarginRight">
-                                        <rect key="frame" x="114" y="0.0" width="78" height="32"/>
+                                        <rect key="frame" x="114" y="0.0" width="88" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="aQP-E9-ZU2"/>
                                         </constraints>
@@ -292,7 +292,7 @@
                     <constraint firstAttribute="trailing" secondItem="Wy5-17-5TG" secondAttribute="trailing" constant="16" id="cZh-Mi-Kap"/>
                     <constraint firstAttribute="trailing" secondItem="Wbr-ae-LPg" secondAttribute="trailing" constant="16" id="dJf-E4-yE9"/>
                     <constraint firstItem="wpl-TC-fin" firstAttribute="width" secondItem="jrW-qx-FJC" secondAttribute="width" id="gFK-zL-Usc"/>
-                    <constraint firstAttribute="bottom" secondItem="Wbr-ae-LPg" secondAttribute="bottom" constant="8" id="ier-Ij-Z1B"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wbr-ae-LPg" secondAttribute="bottom" constant="8" id="ier-Ij-Z1B"/>
                     <constraint firstItem="O2b-6o-lZE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pbj-dH-Kyk"/>
                     <constraint firstItem="O2b-6o-lZE" firstAttribute="top" secondItem="Wy5-17-5TG" secondAttribute="bottom" id="vpK-sV-JK9"/>
                 </constraints>
@@ -306,7 +306,7 @@
                 <outlet property="thirdToneLabel" destination="aEX-3T-Cfn" id="Qrs-fD-nDP"/>
                 <outlet property="triadToneLabel" destination="10c-Pk-RB5" id="POf-Mw-2mV"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="115.51339285714285"/>
+            <point key="canvasLocation" x="131.8840579710145" y="115.17857142857142"/>
         </tableViewCell>
     </objects>
 </document>

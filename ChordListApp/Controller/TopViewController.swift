@@ -45,7 +45,6 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         self.overrideUserInterfaceStyle = .light
         //画面幅の取得
         let screenWidth:CGFloat = UIScreen.main.bounds.width
-        print(screenWidth)
         //画面高さの取得
         let screenHeight:CGFloat = self.view.bounds.height
 
@@ -99,10 +98,13 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        /*pickerViewのTagに付与した番号に合わせて表示するリソースを分岐
+        pickerView.tag == 1 -> キーの選択
+        pickerView.tag == 2 -> スケールの選択 */
         if pickerView.tag == 1{
-            if signatureState == 1{
+            if signatureState == 1{ //調号に合わせて参照する数を分岐させるための処理。 signatureState = 1（つまり#）の場合はこっち
                 return keyDataSourceSharp.count
-            }else{
+            }else{ //調号に合わせて参照する数を分岐させるための処理。 signatureState != 1（つまり♭）の場合はこっち
                 return keyDataSourceflat.count
             }
         }else{
@@ -110,44 +112,45 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
 
-    // 各選択肢が選ばれた時の操作
+    // ドラムロールで各選択肢が選ばれた時の操作
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        /*pickerViewのTagに付与した番号に合わせて表示するリソースを分岐
+        pickerView.tag == 1 -> キーの選択
+        pickerView.tag == 2 -> スケールの選択 */
         if pickerView.tag == 1{
-            if signatureState == 1{
+            if signatureState == 1{ //調号を管理するsignatureStateが1(#)だった場合
                 keyTextField.text = keyDataSourceSharp[row]
                 keyNumber = row
-                print(Int(keyNumber))
-            }else{
+            }else{ //調号を管理するsignatureStateが2(♭)だった場合
                 keyTextField.text = keyDataSourceflat[row]
                 keyNumber = row
-                print(Int(keyNumber))
             }
         }else if pickerView.tag == 2{
             scaleTextField.text = scaleDataSource[row]
             scaleNumber = row
-            print(Int(scaleNumber))
         }
         scaleTextField.endEditing(true)
         keyTextField.endEditing(true)
     }
     
-    func datasourceSelecter(){
-        
-    }
     
     
     //決定ボタンをタップした時の処理
     @IBAction func ChordListVCActionButton(_ sender: Any) {
-        //スケール、Key選択どちらかが空白だったらダイアログを表示したい
-        if scaleTextField.text == "" || keyTextField.text == ""{
-            attentionDialog()
-        }else{ //両方とも値が入っていたら次の画面へ遷移する
+        /*スケール、Key選択どちらかが空白だったらダイアログを表示したい
+          scaleNumber,keyNumberともに初期値を-1に設定しているため、いずれかが空白（-1）だった時にDialogを表示する*/
+        if scaleNumber == -1 || keyNumber == -1 {
+            attentionDialog(title: "値を入力してください" ,message: "入力に不足がないか確認してください")
+        }else{ //両方とも-1以外の値が入っていたら次の画面へ遷移する
             
+            //chordListVCとして、遷移先のChordListViewControllerを認識させる（そのための as! ChordListViewController）
             let chordListVC = self.storyboard?.instantiateViewController(identifier: "ChordListVC") as! ChordListViewController
             
+            //ChordListViewControllerが持つプロパティに対して、当該画面の変数の値を入れる
             chordListVC.signatureState = signatureState
             chordListVC.startNote = keyNumber
             chordListVC.selectScale = scaleNumber
+            
             self.navigationController?.pushViewController(chordListVC,animated: true)
         }
     }
@@ -157,20 +160,24 @@ class TopViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         if sender.isOn {
             //onの時の処理
             signatureState = 1
+            keyTextField.text = ""
+            keyNumber = -1
         }else{
             signatureState = 0
+            keyTextField.text = ""
+            keyNumber = -1
         }
     }
-    
-    func attentionDialog(){
-        let alert:UIAlertController = UIAlertController(title: "値を入力してください", message: "スケールと選択を選択してください", preferredStyle: .alert)
+    //ダイアログを表示するメソッドを実装（今後の流用を加味して、titleとmessageに引数を渡せるように設定）
+    func attentionDialog(title: String, message: String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let alertOkButton:UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{ (action:UIAlertAction!) -> Void in
-            print("OKボタンをタップしました")
-        })
+        //OKボタンの実装
+        let alertOkButton:UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{ (action:UIAlertAction!) -> Void in })
         
+        //alertに選択肢を追加するメソッド
         alert.addAction(alertOkButton)
-        
+        //aleratを表示する実装
         present(alert, animated: true,completion: nil)
     }
 }

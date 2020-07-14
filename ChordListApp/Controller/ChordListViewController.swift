@@ -10,6 +10,13 @@ import UIKit
 
 class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var resultCodeLabel: UILabel!
+    @IBOutlet weak var chordListTableView: UITableView!
+    
+    //resultCodeLabelへ文字を表示するために文字列を格納するための変数を用意
+    var labelRootNote:String = ""
+    var labelScaleNote:String = ""
+    
     //前画面から取得する値等
     var signatureState:Int = -1
     var startNote:Int = -1
@@ -57,8 +64,6 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     
-    
-    @IBOutlet weak var chordListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +74,7 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         if signatureState == 1{
             //signatureState = 1 (#だった時)はsharpToneListの配列を格納する
             selectedSignature = sharpToneList
-
+            
         }else{
             //signatureState = 2 (♭だった時)
             selectedSignature = flatToneList
@@ -80,14 +85,17 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         case 0:
             displayScareArray = MAJER_SCALE
             consitutionArray = MAJERSCALE_CONSITUTION_ARRAY
+            labelScaleNote = "Majerスケール"
             break
         case 1:
             displayScareArray = MINER_SCALE
             consitutionArray = MINERSCALE_CONSITUTION_ARRAY
+            labelScaleNote = "Minerスケール"
             break
         default:
             displayScareArray = MAJER_SCALE
             consitutionArray = MAJERSCALE_CONSITUTION_ARRAY
+            labelScaleNote = "Majerスケール"
             break
         }
 
@@ -98,6 +106,10 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         //ListViewに表示するための配列を生成するメソッド
         adjustDisplayTone(tone: startNote)
 
+        
+        labelRootNote = adjustToneList[0]
+        resultCodeLabel.text = labelRootNote + labelScaleNote
+        
         chordListTableView.delegate = self
         chordListTableView.dataSource = self
 
@@ -126,7 +138,8 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
         majarOrMiner = cell.judgeCode(firstElement: firstElement, secondElement: secondElement)
         
         //CustomCellの高さを判定するメソッド
-        decideCellFormat(firstElement:firstElement,secondElement:secondElement)
+        cellHeight = cell.judgeCellheight(firstElement: firstElement, secondElement: secondElement)
+//        decideCellFormat(firstElement:firstElement,secondElement:secondElement)
         
         
         
@@ -153,16 +166,6 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         
-//        if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == true{ //majerの場合
-//            return 48
-//        }else if displayScareArray[indexPath.row][0] == true && displayScareArray[indexPath.row][1] == false{ //minerの場合{
-//            return 48
-//        }else if displayScareArray[indexPath.row][0] == false && displayScareArray[indexPath.row][1] == true{ //miner♭5の場合
-//            return 48
-//        }else{ //ダイアトニックスケール外の場合
-//            return 0
-//        }
-        print(cellHeight)
         return cellHeight
     }
     
@@ -172,7 +175,6 @@ class ChordListViewController: UIViewController,UITableViewDelegate,UITableViewD
             
         let arraySlice = selectedSignature.dropFirst(tone)
         adjustToneList = Array(arraySlice)
-        print(adjustToneList)
         
     }
     

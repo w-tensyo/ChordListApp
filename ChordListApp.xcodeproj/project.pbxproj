@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44B2C5E24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B2C5C24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.swift */; };
+		C44B2C5F24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44B2C5D24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.xib */; };
+		C44B2C6124BDA4FF006EA3E8 /* HarmonicMiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B2C6024BDA4FF006EA3E8 /* HarmonicMiner.swift */; };
 		C4BF577E24B5C55F0043A038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF577D24B5C55F0043A038 /* AppDelegate.swift */; };
 		C4BF578024B5C55F0043A038 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF577F24B5C55F0043A038 /* SceneDelegate.swift */; };
 		C4BF578224B5C55F0043A038 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF578124B5C55F0043A038 /* TopViewController.swift */; };
@@ -16,12 +19,13 @@
 		C4CF166824B96EBE00D0A092 /* TriadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF166624B96EBE00D0A092 /* TriadTableViewCell.swift */; };
 		C4CF166924B96EBE00D0A092 /* TriadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CF166724B96EBE00D0A092 /* TriadTableViewCell.xib */; };
 		C4CF166B24B99B9700D0A092 /* TriadCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF166A24B99B9700D0A092 /* TriadCode.swift */; };
-		C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */; };
-		C4D8966024B826D700F5D0AA /* ScaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */; };
 		C4D8966224B8484600F5D0AA /* ChordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8966124B8484600F5D0AA /* ChordListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C44B2C5C24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicAndMelodicMinarTableViewCell.swift; sourceTree = "<group>"; };
+		C44B2C5D24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HarmonicAndMelodicMinarTableViewCell.xib; sourceTree = "<group>"; };
+		C44B2C6024BDA4FF006EA3E8 /* HarmonicMiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicMiner.swift; sourceTree = "<group>"; };
 		C4BF577A24B5C55F0043A038 /* ChordListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BF577D24B5C55F0043A038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4BF577F24B5C55F0043A038 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,8 +37,6 @@
 		C4CF166624B96EBE00D0A092 /* TriadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriadTableViewCell.swift; sourceTree = "<group>"; };
 		C4CF166724B96EBE00D0A092 /* TriadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriadTableViewCell.xib; sourceTree = "<group>"; };
 		C4CF166A24B99B9700D0A092 /* TriadCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriadCode.swift; sourceTree = "<group>"; };
-		C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTableViewCell.swift; sourceTree = "<group>"; };
-		C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleTableViewCell.xib; sourceTree = "<group>"; };
 		C4D8966124B8484600F5D0AA /* ChordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				C4CF166A24B99B9700D0A092 /* TriadCode.swift */,
+				C44B2C6024BDA4FF006EA3E8 /* HarmonicMiner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -62,10 +65,10 @@
 			children = (
 				C4BF578824B5C5600043A038 /* LaunchScreen.storyboard */,
 				C4BF578324B5C55F0043A038 /* Main.storyboard */,
-				C4D8965D24B826D700F5D0AA /* ScaleTableViewCell.swift */,
-				C4D8965E24B826D700F5D0AA /* ScaleTableViewCell.xib */,
 				C4CF166624B96EBE00D0A092 /* TriadTableViewCell.swift */,
 				C4CF166724B96EBE00D0A092 /* TriadTableViewCell.xib */,
+				C44B2C5C24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.swift */,
+				C44B2C5D24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,7 +173,7 @@
 				C4BF578A24B5C5600043A038 /* LaunchScreen.storyboard in Resources */,
 				C4BF578724B5C5600043A038 /* Assets.xcassets in Resources */,
 				C4CF166924B96EBE00D0A092 /* TriadTableViewCell.xib in Resources */,
-				C4D8966024B826D700F5D0AA /* ScaleTableViewCell.xib in Resources */,
+				C44B2C5F24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.xib in Resources */,
 				C4BF578524B5C55F0043A038 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,8 +187,9 @@
 			files = (
 				C4BF578224B5C55F0043A038 /* TopViewController.swift in Sources */,
 				C4BF577E24B5C55F0043A038 /* AppDelegate.swift in Sources */,
-				C4D8965F24B826D700F5D0AA /* ScaleTableViewCell.swift in Sources */,
+				C44B2C6124BDA4FF006EA3E8 /* HarmonicMiner.swift in Sources */,
 				C4D8966224B8484600F5D0AA /* ChordListViewController.swift in Sources */,
+				C44B2C5E24BD91F1006EA3E8 /* HarmonicAndMelodicMinarTableViewCell.swift in Sources */,
 				C4CF166824B96EBE00D0A092 /* TriadTableViewCell.swift in Sources */,
 				C4CF166B24B99B9700D0A092 /* TriadCode.swift in Sources */,
 				C4BF578024B5C55F0043A038 /* SceneDelegate.swift in Sources */,
