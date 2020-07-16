@@ -9,12 +9,14 @@
 import Foundation
 
 class TriadCode{
+    
     var rootToneNumber:String = ""
     var thirdToneNumber:String = ""
     var fifthToneNumber:String = ""
     var rootNote:String = ""
     var triadCode:String = ""
     var toneNumber:Int = 0
+    
     
     
 }
